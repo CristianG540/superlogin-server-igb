@@ -73,7 +73,9 @@ var superlogin = new SuperLogin(config);
 app.use('/auth', superlogin.router);
 
 app.get('/ping', function (req, res) {
-  res.send('ok');
+  res.send({
+    status: 'ok'
+  });
 })
 
 app.listen(app.get('port'));

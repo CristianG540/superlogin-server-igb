@@ -4,13 +4,13 @@ var bodyParser = require('body-parser');
 var logger = require('morgan');
 var cors = require('cors');
 var SuperLogin = require('superlogin');
-/*var socketPouchServer = require('socket-pouch/server');
+var socketPouchServer = require('socket-pouch/server');
 
 socketPouchServer.listen(80, {
   remoteUrl: 'http://localhost:5984'
-});*/
+});
 
-var app = express();
+/*var app = express();
 app.set('port', process.env.PORT || 3000);
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -84,4 +84,4 @@ app.get('/ping', function (req, res) {
 })
 
 app.listen(app.get('port'));
-console.log("App listening on " + app.get('port'));
+console.log("App listening on " + app.get('port'));*/

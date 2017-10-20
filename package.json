@@ -16,6 +16,7 @@
         "morgan": "^1.7.0",
         "superlogin": "^0.6.1",
         "couch-pwd": "zemirco/couch-pwd",
-        "socket-pouch": "^2.0.0"
+        "socket-pouch": "^2.0.0",
+        "pouchdb": "^6.3.4"
     }
 }

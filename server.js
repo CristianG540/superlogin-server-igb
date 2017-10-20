@@ -4,10 +4,18 @@ var bodyParser = require('body-parser');
 var logger = require('morgan');
 var cors = require('cors');
 var SuperLogin = require('superlogin');
+var PouchDB = require('pouchdb');
 var socketPouchServer = require('socket-pouch/server');
 
 socketPouchServer.listen(8080, {
-  remoteUrl: 'http://localhost:5984'
+  pouchCreator: function (dbName) {
+    return new PouchDB(dbName, {
+      auth: {
+        username: 'admin',
+        password: 'admin'
+      }
+    });
+  }
 });
 
 var app = express();

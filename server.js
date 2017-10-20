@@ -6,7 +6,7 @@ var cors = require('cors');
 var SuperLogin = require('superlogin');
 var socketPouchServer = require('socket-pouch/server');
 
-socketPouchServer.listen(80, {
+socketPouchServer.listen(8080, {
   remoteUrl: 'http://localhost:5984'
 });
 

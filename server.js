@@ -41,6 +41,7 @@ var config = {
   security: {
     maxFailedLogins: 3,
     lockoutTime: 600,
+    sessionLife: 8640000,
     tokenLife: 86400,
     loginOnRegistration: true,
   },

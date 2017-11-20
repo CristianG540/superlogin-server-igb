@@ -27,8 +27,8 @@ app.use(function(req, res, next) {
 
 var config = {
   dbServer: {
-    protocol: 'http://',
-    host: '108.163.227.76:5984',
+    protocol: 'https://',
+    host: '108.163.227.76:6984',
     user: 'admin',
     password: 'Webmaster2017#@',
     userDB: 'sl-users',

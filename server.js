@@ -1,10 +1,16 @@
+var fs = require('fs');
 var express = require('express');
 var http = require('http');
+var https = require('https');
 var bodyParser = require('body-parser');
 var logger = require('morgan');
 var cors = require('cors');
 var SuperLogin = require('superlogin');
 
+var privateKey  = fs.readFileSync('/opt/couchdb/etc/cert/server.key', 'utf8');
+var certificate = fs.readFileSync('/opt/couchdb/etc/cert/server.crt', 'utf8');
+
+var credentials = {key: privateKey, cert: certificate};
 var app = express();
 app.set('port', process.env.PORT || 3000);
 app.use(logger('dev'));
@@ -80,4 +86,6 @@ app.get('/ping', function (req, res) {
 })
 
 app.listen(app.get('port'));
+var httpsServer = https.createServer(credentials, app);
+httpsServer.listen(3443);
 console.log("App listening on " + app.get('port'));

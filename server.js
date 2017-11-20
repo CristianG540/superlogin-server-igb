@@ -1,3 +1,4 @@
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 var fs = require('fs');
 var express = require('express');
 var http = require('http');
@@ -72,6 +73,7 @@ var config = {
     }
   }
 }
+
 
 // Initialize SuperLogin
 var superlogin = new SuperLogin(config);

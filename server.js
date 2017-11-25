@@ -10,8 +10,9 @@ var SuperLogin = require('superlogin');
 
 var privateKey  = fs.readFileSync('/opt/couchdb/etc/cert/server.key', 'utf8');
 var certificate = fs.readFileSync('/opt/couchdb/etc/cert/server.crt', 'utf8');
+var caBundle = fs.readFileSync('/opt/couchdb/etc/cert/comodo.crt', 'utf8');
 
-var credentials = {key: privateKey, cert: certificate};
+var credentials = {ca: caBundle ,key: privateKey, cert: certificate};
 var app = express();
 app.set('port', process.env.PORT || 3000);
 app.use(logger('dev'));

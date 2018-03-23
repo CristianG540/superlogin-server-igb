@@ -62,7 +62,7 @@ var config = {
   // See [Sofa Model documentation](http://github.com/colinskow/sofa-model) for details.
   userModel: {
     // For example, this will require each new user to specify a valid age on the sign-up form or registration will fail
-    whitelist: ['profile.asesor_id', 'profile.email', 'asesor_id'],
+    whitelist: ['profile.asesor_id', 'profile.email', 'profile.nit_cliente', 'asesor_id'],
     validate: {
       asesor_id: {
         presence: true,
